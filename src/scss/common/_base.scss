@@ -1,0 +1,74 @@
+/* Webfont - Noto Sans KR */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap');
+
+/* reset */
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body, input, textarea, select, button, table {
+    font-family: 'Noto Sans KR', -apple-system, AppleSDGothicNeo, '맑은고딕', 'Malgun Gothic', Helvetica, sans-serif;;
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+input {
+  -webkit-appearance: none;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+img, fieldset {
+  border: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+em, address {
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  text-decoration: none;
+}
+
+/* blind text */
+.blind, .u_skip {
+  overflow: hidden !important;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0) !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+}
+
+/* layout */
+.wrap {
+  width: 100%;
+  min-width: 1400px;
+  margin: 0 auto;
+}
+
+.inner {
+  position: relative;
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.container {
+  padding-top: 81px;
+}

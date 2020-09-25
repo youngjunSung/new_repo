@@ -1,0 +1,145 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$icon-arr-down-name: 'icon_arr_down';
+$icon-arr-down-x: 140px;
+$icon-arr-down-y: 48px;
+$icon-arr-down-offset-x: -140px;
+$icon-arr-down-offset-y: -48px;
+$icon-arr-down-width: 12px;
+$icon-arr-down-height: 7px;
+$icon-arr-down-total-width: 187px;
+$icon-arr-down-total-height: 104px;
+$icon-arr-down-image: '../img/sprite.png';
+$icon-arr-down: (140px, 48px, -140px, -48px, 12px, 7px, 187px, 104px, '../img/sprite.png', 'icon_arr_down', );
+$icon-arr-down-gray-name: 'icon_arr_down_gray';
+$icon-arr-down-gray-x: 120px;
+$icon-arr-down-gray-y: 48px;
+$icon-arr-down-gray-offset-x: -120px;
+$icon-arr-down-gray-offset-y: -48px;
+$icon-arr-down-gray-width: 16px;
+$icon-arr-down-gray-height: 9px;
+$icon-arr-down-gray-total-width: 187px;
+$icon-arr-down-gray-total-height: 104px;
+$icon-arr-down-gray-image: '../img/sprite.png';
+$icon-arr-down-gray: (120px, 48px, -120px, -48px, 16px, 9px, 187px, 104px, '../img/sprite.png', 'icon_arr_down_gray', );
+$icon-btn-left-name: 'icon_btn_left';
+$icon-btn-left-x: 0px;
+$icon-btn-left-y: 48px;
+$icon-btn-left-offset-x: 0px;
+$icon-btn-left-offset-y: -48px;
+$icon-btn-left-width: 56px;
+$icon-btn-left-height: 56px;
+$icon-btn-left-total-width: 187px;
+$icon-btn-left-total-height: 104px;
+$icon-btn-left-image: '../img/sprite.png';
+$icon-btn-left: (0px, 48px, 0px, -48px, 56px, 56px, 187px, 104px, '../img/sprite.png', 'icon_btn_left', );
+$icon-btn-right-name: 'icon_btn_right';
+$icon-btn-right-x: 60px;
+$icon-btn-right-y: 48px;
+$icon-btn-right-offset-x: -60px;
+$icon-btn-right-offset-y: -48px;
+$icon-btn-right-width: 56px;
+$icon-btn-right-height: 56px;
+$icon-btn-right-total-width: 187px;
+$icon-btn-right-total-height: 104px;
+$icon-btn-right-image: '../img/sprite.png';
+$icon-btn-right: (60px, 48px, -60px, -48px, 56px, 56px, 187px, 104px, '../img/sprite.png', 'icon_btn_right', );
+$logo-line-games-name: 'logo_line_games';
+$logo-line-games-x: 0px;
+$logo-line-games-y: 0px;
+$logo-line-games-offset-x: 0px;
+$logo-line-games-offset-y: 0px;
+$logo-line-games-width: 187px;
+$logo-line-games-height: 20px;
+$logo-line-games-total-width: 187px;
+$logo-line-games-total-height: 104px;
+$logo-line-games-image: '../img/sprite.png';
+$logo-line-games: (0px, 0px, 0px, 0px, 187px, 20px, 187px, 104px, '../img/sprite.png', 'logo_line_games', );
+$logo-line-games-gray-name: 'logo_line_games_gray';
+$logo-line-games-gray-x: 0px;
+$logo-line-games-gray-y: 24px;
+$logo-line-games-gray-offset-x: 0px;
+$logo-line-games-gray-offset-y: -24px;
+$logo-line-games-gray-width: 187px;
+$logo-line-games-gray-height: 20px;
+$logo-line-games-gray-total-width: 187px;
+$logo-line-games-gray-total-height: 104px;
+$logo-line-games-gray-image: '../img/sprite.png';
+$logo-line-games-gray: (0px, 24px, 0px, -24px, 187px, 20px, 187px, 104px, '../img/sprite.png', 'logo_line_games_gray', );
+$spritesheet-width: 187px;
+$spritesheet-height: 104px;
+$spritesheet-image: '../img/sprite.png';
+$spritesheet-sprites: ($icon-arr-down, $icon-arr-down-gray, $icon-btn-left, $icon-btn-right, $logo-line-games, $logo-line-games-gray, );
+$spritesheet: (187px, 104px, '../img/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
