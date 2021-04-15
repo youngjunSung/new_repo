@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
-@import '../sprite_scss/sprite';
-@import 'common/base';
+@import './sprite/sprite';
+@import './common/layout';
+@import './common/reset';
 
-@import 'layout/header';
-@import 'layout/footer';
+@import './layout/header';
+@import './layout/footer';
 
 
-@import 'pages/main';
+@import './pages/main';
 

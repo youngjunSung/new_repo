@@ -6,12 +6,14 @@ var fileinclude = require('gulp-file-include');
 
 gulp.task('watch',function(){
   gulp.watch('src/html/**/*.html',gulp.series('fileinclude'));
-  gulp.watch('src/scss/**/*.scss',gulp.series('sass', 'sprite', 'copyimg'));
+  gulp.watch('src/scss/**/*.scss',gulp.series('sass'));
+  gulp.watch('src/sprite/**/*.{png,jpg,gif,svg,json}',gulp.series('sprite'));
+  gulp.watch('src/img/**/*.{png,jpg,gif,svg,json}',gulp.series('copyimg'));
 });
 
 gulp.task('sass',function(done){
   done();
-  return gulp.src('src/scss/**/*.scss')
+  return gulp.src('src/scss/*.scss')
   .pipe(sourcemaps.init())
   .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
   .pipe(sourcemaps.write('.',{includeContent: true}))
@@ -19,24 +21,24 @@ gulp.task('sass',function(done){
 });
 
 gulp.task('sprite', function(done) {
-  var spriteData = gulp.src('src/sprite_img/*.png')
+  var spriteData = gulp.src('src/sprite/*.png')
 
   .pipe(spritesmith({
     imgName: 'sprite.png',
-    cssName: '_sprite.scss',
+    cssName: 'sprite.scss',
     padding: 4,
-    imgPath: '../img/sprite.png'
+    imgPath: 'dist/im/sprite.png'
   }));
 
   var imgStream = new Promise(function(resolve) {
     spriteData.img
-    .pipe(gulp.dest('./dist/sp-img/'))
+    .pipe(gulp.dest('./dist/im/'))
     .on('end',resolve);
   });
 
   var cssStream = new Promise(function(resolve) {
     spriteData.css
-    .pipe(gulp.dest('src/sprite_scss/'))
+    .pipe(gulp.dest('./src/scss/sprite/'))
     .on('end',resolve);
   });
   
