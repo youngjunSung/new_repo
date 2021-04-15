@@ -4,13 +4,13 @@ var spritesmith = require('gulp.spritesmith');
 var sourcemaps = require('gulp-sourcemaps');
 var fileinclude = require('gulp-file-include');
 
-// gulp.task('default', ['fileinclude']);
+gulp.task('watch',function(){
+  gulp.watch('src/html/**/*.html',gulp.series('fileinclude'));
+  gulp.watch('src/scss/**/*.scss',gulp.series('sass', 'sprite', 'copyimg'));
+});
 
-// gulp.task('watch',function(){
-//   gulp.watch('src/scss/**/*.scss',['sass']);
-// });
-
-gulp.task('sass',function(){
+gulp.task('sass',function(done){
+  done();
   return gulp.src('src/scss/**/*.scss')
   .pipe(sourcemaps.init())
   .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
@@ -18,7 +18,7 @@ gulp.task('sass',function(){
   .pipe(gulp.dest('dist/css/'));
 });
 
-gulp.task('sprite', function() {
+gulp.task('sprite', function(done) {
   var spriteData = gulp.src('src/sprite_img/*.png')
 
   .pipe(spritesmith({
@@ -40,6 +40,7 @@ gulp.task('sprite', function() {
     .on('end',resolve);
   });
   
+  done();
   return Promise.all([imgStream, cssStream]);
 });
 
@@ -57,3 +58,5 @@ gulp.task('copyimg', function() {
     return gulp.src(['./src/img/**/*.{png,jpg,gif,svg,json}','./src/img/*.{png,jpg,gif,svg,json}'])
         .pipe(gulp.dest('./dist/img'));
 });
+
+gulp.task('default', gulp.parallel(gulp.series('fileinclude', 'sass', 'sprite', 'copyimg')));
