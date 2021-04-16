@@ -84,17 +84,17 @@ $spritesheet: (280px, 164px, '../im/sprite.png', $spritesheet-sprites, );
 // // HTML
 // <i class="icon icon-home"></i>
 @mixin sprite-width($sprite) {
-  width: nth($sprite, 5);
+  width: (nth($sprite, 5))/2;
 }
 
 @mixin sprite-height($sprite) {
-  height: nth($sprite, 6);
+  height: (nth($sprite, 6))/2;
 }
 
 @mixin sprite-position($sprite) {
   $sprite-offset-x: nth($sprite, 3);
   $sprite-offset-y: nth($sprite, 4);
-  background-position: $sprite-offset-x  $sprite-offset-y;
+  background-position: ($sprite-offset-x)/2  ($sprite-offset-y)/2;
 }
 
 @mixin sprite-image($sprite) {
@@ -107,6 +107,7 @@ $spritesheet: (280px, 164px, '../im/sprite.png', $spritesheet-sprites, );
   @include sprite-position($sprite);
   @include sprite-width($sprite);
   @include sprite-height($sprite);
+  background-size: 140px 82px;
 }
 
 // The `sprites` mixin generates identical output to the CSS template
