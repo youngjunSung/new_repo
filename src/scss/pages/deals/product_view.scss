@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.product_view {
+    max-width: 500px;
+    margin: 0 auto;
+    .swiper-slide {
+        padding-bottom: 100%;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: gray;
+    }
+}

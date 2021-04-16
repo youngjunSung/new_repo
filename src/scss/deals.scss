@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+// 공통 스타일
+@import './mixin/mixin';
+@import './sprite/sprite';
+@import './common/reset';
+@import './common/layout'; // 모바일 공통 헤더/푸터
+
+// 플러그인
+@import './lib/swiper';
+
+// 페이지 UI
+@import './pages/deals';

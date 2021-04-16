@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+.product_info {
+    padding: 0 10px;
+    .product_preorder {
+        margin: 0 -10px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        text-align: center;
+        .title {
+            font-size: 14px;
+            color: red;
+        }
+        .time {
+            display: inline-block;
+            font-size: 14px;
+        }
+        .text {
+            font-size: 12px;
+            color: silver;
+        }
+    }
+    &_top {
+        margin-top: 10px;
+        .product_tag {
+            position: relative;
+            display: inline-block;
+            margin-right: 20px;
+            padding-left: 5px;
+            padding-right: 3px;
+            height: 18px;
+            background-color: orange;
+            color: #fff;
+            line-height: 18px;
+            &::after {
+                content: '';
+                @include position(absolute, 0, -9px, null, null);
+                border-top: 9px solid transparent;
+                border-left: 9px solid orange;
+                border-bottom: 9px solid transparent;
+            }
+        }
+        .product_grade {
+            display: inline-block;
+            &_count {
+                font-size: 11px;
+            } // product_grade_count
+        }
+    } // product_info_top
+    &_title {
+        margin-top: 10px;
+        .product_desc {
+            font-size: 12px;
+            color: silver;
+        }
+        .product_name {
+            margin-top: 3px;
+            font-size: 16px;
+            font-weight: normal;
+            color: #17181a;
+        }
+    } // product_info_title
+    &_price {
+        margin-top: 10px;
+        .price_desc {
+            font-size: 12px;
+            color: #1e90ff;
+        }
+        .price_box {
+            font-size: 0;
+        }
+        .price_discount {
+            font-size: 16px;
+            margin-right: 4px;
+        }
+        .price_num {
+            font-size: 16px;
+            margin-right: 4px;
+        }
+        .price_origin {
+            font-size: 12px;
+            color: red;
+        }
+    } // product_info_price
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>11st 과제 - 성영준</title>
+    <link rel="stylesheet" href="../css/deals.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 헤더 -->
+        @@include('header.html')
+        <!-- [D] 상품 이미지 슬라이드 영역 -->
+        @@include('./deals/product_view.html')
+        <!-- // [D] 상품 이미지 슬라이드 영역 -->
+        <!-- 상품 상세 정보 : 가격 배송 혜택 -->
+        @@include('./deals/deals_wrap.html')
+        <div style="background-color: #d2d2d2; height: 200px;"></div>
+        <!-- 하단 플로팅 버튼 -->
+        @@include('./deals/buy_option.html')
+    </div>
+    <!-- [D] 마크업 확인용 스크립트 -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+            el: '.swiper-pagination',
+            },
+        });
+    </script>
+</body>
+
+</html>

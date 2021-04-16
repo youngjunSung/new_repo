@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.product_btns {
+    display: flex;
+    border-top: 1px solid #ddd;
+    button {
+        flex: 1 1 auto;
+        height: 50px;
+        .count {
+            margin-left: 5px;
+        }
+        & + button {
+            border-left: 1px solid #ddd;
+        }
+    }
+}

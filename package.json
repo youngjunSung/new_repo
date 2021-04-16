@@ -9,12 +9,19 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
     "gulp-file-include": "^2.2.2",
     "gulp-load-plugins": "^2.0.4",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-watch": "^5.0.1",
     "gulp.spritesmith": "^6.11.0"
-  }
+  },
+  "browserslist": [
+    "ie > 0",
+    "chrome > 0",
+    "firefox > 0"
+  ]
 }

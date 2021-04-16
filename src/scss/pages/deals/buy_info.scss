@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.buy_info {
+    padding: 10px;
+    &_box {
+        padding: 10px 10px 10px 25px;
+        border-top: 1px solid #ddd;
+    } // buy_info_box
+    &_title {
+        font-size: 14px;
+    } // buy_info_title
+    &_desc {
+        margin-top: 4px;
+        font-size: 14px;
+        em {
+            font-weight: bold;
+            color: #1e90ff;
+        }
+    } // buy_info_desc
+    &_benefit {
+        margin-top: 4px;
+        font-size: 14px;
+        em {
+            color: #1e90ff;
+        }
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            margin: 0 0 2px 2px;
+            border-width: 0 1px 1px 0;
+            border-style: solid;
+            border-color: #707e80;
+            transform: rotate(-45deg);
+        }
+    } // buy_info_benefit
+}

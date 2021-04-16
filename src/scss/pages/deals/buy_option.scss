@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.buy_option {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 10px;
+    background-color: #f5f5f5;
+    button {
+        height: 50px;
+        font-size: 14px;
+        & + button {
+            margin-left: 5px;
+        }
+    }
+    .btn_chat {
+        width: 80px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+    }
+    .btn_purchase, .btn_gift {
+        flex: 1 1 auto;
+        background-color: #f92132;
+        color: #fff;
+    }
+}

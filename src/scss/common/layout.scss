@@ -1,16 +1,37 @@
+@charset "UTF-8";
+
 /* layout */
 .wrap {
-    width: 100%;
-    min-width: 1400px;
-    margin: 0 auto;
-  }
-  
-  .inner {
+    // padding-top: 56px;
+    $icon-back: (0px, 0px, 0px, 0px, 80px, 80px, 196px, 80px, '../im/sprite.png', 'icon_back', );
+    color: nth($icon_back, 9);
+}
+.header {
     position: relative;
-    width: 1400px;
-    margin: 0 auto;
-  }
-  
-  .container {
-    padding-top: 81px;
-  }
+    height: 56px;
+    border-bottom: 1px solid #ddd;
+    &_logo {
+        @include position(absolute, 50%, null, null, 56px);
+        @include sprite($icon-logo);
+        margin-top: -12px;
+        a {
+            display: block;
+            height: 100%;
+        }
+    } // header_logo
+    .btn_back {
+        @include position(absolute, 50%, null, null, 0);
+        @include sprite($icon-back);
+        margin-top: -20px;
+    }
+    .btn_search {
+        @include position(absolute, 50%, 60px, null, null);
+        @include sprite($icon-search);
+        margin-top: -20px;
+    }
+    .btn_cart {
+        @include position(absolute, 50%, 10px, null, null);
+        @include sprite($icon-cart);
+        margin-top: -20px;
+    }
+}
